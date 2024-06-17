@@ -98,9 +98,10 @@ export const Header = () => {
   return (
     <div className="h-[40rem] flex items-end py-52 px-20">
       <div className="text-6xl font-bold text-neutral-600 dark:text-neutral-400">
-        Build
+        Delivering projects that are
         <FlipWords words={["Better", "Faster", "Efficent"]} /> <br />
-        Peace of <FlipWords words={["Softwares", "Servers", "Websites"]} /> <br/> With Arjun
+        Crafting your ideal
+        <FlipWords words={["Softwares", "Servers", "Websites"]} />
       </div>
     </div>
   );
