@@ -50,7 +50,7 @@ export const HeroParallax = ({ products }: { products: HeroData }) => {
   return (
     <div
       ref={ref}
-      className="h-[300vh] bg-gray-950 py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-[300vh]  py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -97,10 +97,10 @@ export const HeroParallax = ({ products }: { products: HeroData }) => {
 export const Header = () => {
   return (
     <div className="h-[40rem] flex items-end py-52 px-20">
-      <div className="text-6xl font-bold text-neutral-600 dark:text-neutral-400">
-        Delivering projects that are
+      <div className="text-6xl leading-tight font-bold text-neutral-600 dark:text-neutral-300">
+        <span className="capitalize">Delivering projects that are</span>
         <FlipWords words={["Better", "Faster", "Efficent"]} /> <br />
-        Crafting your ideal
+        <span className="capitalize">Crafting your ideal</span>
         <FlipWords words={["Softwares", "Servers", "Websites"]} />
       </div>
     </div>
