@@ -3,12 +3,14 @@ import { useEffect } from "react";
 import { motion, stagger, useAnimate } from "framer-motion";
 import { cn } from "@/utils/cn";
 
-export const TextGenerateEffect = ({
+const TextGenerateEffect = ({
   words,
   className,
+  textStyle,
 }: {
   words: string;
   className?: string;
+  textStyle?: string;
 }) => {
   const [scope, animate] = useAnimate();
   let wordsArray = words.split(" ");
@@ -21,9 +23,9 @@ export const TextGenerateEffect = ({
       {
         duration: 2,
         delay: stagger(0.2),
-     },
+      },
     );
-  }, [scope.current]);
+  }, [ animate]);
 
   const renderWords = () => {
     return (
@@ -32,7 +34,10 @@ export const TextGenerateEffect = ({
           return (
             <motion.span
               key={word + idx}
-              className="dark:text-white text-black opacity-0"
+              className={cn(
+                "dark:text-white text-black opacity-0",
+                textStyle,
+              )}
             >
               {word}{" "}
             </motion.span>
@@ -43,12 +48,14 @@ export const TextGenerateEffect = ({
   };
 
   return (
-    <div className={cn("font-bold", className)}>
+    <div className={cn("font-mono", className)}>
       <div className="mt-4">
-        <div className=" dark:text-white text-black text-2xl leading-snug tracking-wide">
+        <div className=" dark:text-white text-black leading-snug tracking-wide">
           {renderWords()}
         </div>
       </div>
     </div>
   );
 };
+
+export default TextGenerateEffect
