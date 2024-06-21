@@ -1,6 +1,7 @@
+"use client";
 import { cn } from "@/utils/cn";
-import { motion } from "framer-motion";
 import React, { ReactNode } from "react";
+import { WindowPopOut } from "./Animation/WindowPopOut";
 
 interface Props {
   children: ReactNode;
@@ -32,7 +33,7 @@ const TitleBar = ({ title }: { title: string }) => (
 
 const MacWindow: React.FC<Props> = ({ children, className, title }) => {
   return (
-    <div
+    <WindowPopOut
       className={cn(
         "rounded-xl shadow-md border-4 border-orange-200/20 shadow-gray-500 overflow-hidden bg-zinc-900 w-full h-full",
         className,
@@ -40,7 +41,7 @@ const MacWindow: React.FC<Props> = ({ children, className, title }) => {
     >
       <TitleBar title={title} />
       <div className="p-5 bg-gray-950 h-full">{children}</div>
-    </div>
+    </WindowPopOut>
   );
 };
 
